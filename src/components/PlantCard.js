@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 
 function PlantCard({ plantID, plantName, plantImage, plantPrice }) {
-  // set state for in-stock button
-  // const [stockStatus, setStockStatus] = useState(true);
+  const [inStockStatus, setInStockStatus] = useState(true);
 
   return (
     <li className="card">
@@ -10,10 +9,17 @@ function PlantCard({ plantID, plantName, plantImage, plantPrice }) {
       <h4>{plantName}</h4>
       <p>Price: {plantPrice}</p>
 
-      {true ? (
-        <button className="primary">In Stock</button>
+      {inStockStatus ? (
+        <button
+          className="primary"
+          onClick={() => setInStockStatus(!inStockStatus)}
+        >
+          In Stock
+        </button>
       ) : (
-        <button>Out of Stock</button>
+        <button onClick={() => setInStockStatus(!inStockStatus)}>
+          Out of Stock
+        </button>
       )}
     </li>
   );
