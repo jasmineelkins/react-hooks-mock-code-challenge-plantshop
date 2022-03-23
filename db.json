@@ -41,6 +41,12 @@
       "name": "Fiddle Leaf Fig",
       "image": "./images/fiddle-leaf-fig.jpg",
       "price": 55
+    },
+    {
+      "name": "Succulent",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzaPvygWa2MNDi58DRotfVvxEAMdT0DqKqhMdV3vGtydss6STdhMs8eo8PvVU_PHPNuZ0&usqp=CAU",
+      "price": "5.99",
+      "id": 8
     }
   ]
 }
