@@ -7,6 +7,7 @@ function App() {
   const [newPlantName, setNewPlantName] = useState("");
   const [newPlantImage, setNewPlantImage] = useState("");
   const [newPlantPrice, setNewPlantPrice] = useState("");
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     fetch(`http://localhost:6001/plants`)
@@ -52,6 +53,14 @@ function App() {
       .catch((error) => console.log(error.message));
   }
 
+  function searchForPlant(searchText) {
+    const filteredListBySearch = plantList.filter((plant) =>
+      plant.name.toLowerCase().includes(searchText.toLowerCase())
+    );
+
+    setPlantList(filteredListBySearch);
+  }
+
   return (
     <div className="app">
       <Header />
@@ -64,6 +73,9 @@ function App() {
         newPlantPrice={newPlantPrice}
         setNewPlantPrice={setNewPlantPrice}
         addNewPlant={addNewPlant}
+        searchText={searchText}
+        setSearchText={setSearchText}
+        searchForPlant={searchForPlant}
       />
     </div>
   );

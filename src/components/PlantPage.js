@@ -12,6 +12,9 @@ function PlantPage({
   newPlantPrice,
   setNewPlantPrice,
   addNewPlant,
+  searchText,
+  setSearchText,
+  searchForPlant,
 }) {
   return (
     <main>
@@ -24,7 +27,11 @@ function PlantPage({
         setNewPlantPrice={setNewPlantPrice}
         addNewPlant={addNewPlant}
       />
-      <Search />
+      <Search
+        searchText={searchText}
+        setSearchText={setSearchText}
+        searchForPlant={searchForPlant}
+      />
       <PlantList plantList={plantList} />
     </main>
   );
