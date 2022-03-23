@@ -61,6 +61,19 @@ function App() {
     setPlantList(filteredListBySearch);
   }
 
+  function removePlant(plantID) {
+    const updatedList = plantList.filter((plant) => plant.id !== plantID);
+    setPlantList(updatedList);
+
+    fetch(`http://localhost:6001/plants/${plantID}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    });
+  }
+
   return (
     <div className="app">
       <Header />
@@ -76,6 +89,7 @@ function App() {
         searchText={searchText}
         setSearchText={setSearchText}
         searchForPlant={searchForPlant}
+        removePlant={removePlant}
       />
     </div>
   );

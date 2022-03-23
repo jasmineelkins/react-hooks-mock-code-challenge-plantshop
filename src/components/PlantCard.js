@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 
-function PlantCard({ plantID, plantName, plantImage, plantPrice }) {
+function PlantCard({
+  plantID,
+  plantName,
+  plantImage,
+  plantPrice,
+  removePlant,
+}) {
   const [inStockStatus, setInStockStatus] = useState(true);
 
   return (
@@ -21,6 +27,10 @@ function PlantCard({ plantID, plantName, plantImage, plantPrice }) {
           Out of Stock
         </button>
       )}
+
+      <button className="remove" onClick={() => removePlant(plantID)}>
+        Remove
+      </button>
     </li>
   );
 }

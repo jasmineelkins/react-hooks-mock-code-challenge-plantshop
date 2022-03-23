@@ -15,6 +15,7 @@ function PlantPage({
   searchText,
   setSearchText,
   searchForPlant,
+  removePlant,
 }) {
   return (
     <main>
@@ -32,7 +33,7 @@ function PlantPage({
         setSearchText={setSearchText}
         searchForPlant={searchForPlant}
       />
-      <PlantList plantList={plantList} />
+      <PlantList plantList={plantList} removePlant={removePlant} />
     </main>
   );
 }

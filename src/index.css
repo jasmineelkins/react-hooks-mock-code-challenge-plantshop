@@ -28,6 +28,11 @@ button.primary {
   color: white;
 }
 
+button.remove {
+  background-color: tomato;
+  color: white;
+}
+
 .app {
   margin: 0 auto;
   max-width: 1200px;

@@ -1,7 +1,7 @@
 import React from "react";
 import PlantCard from "./PlantCard";
 
-function PlantList({ plantList }) {
+function PlantList({ plantList, removePlant }) {
   const plantsToDisplay = plantList.map((plant) => (
     <PlantCard
       plantID={plant.id}
@@ -9,6 +9,7 @@ function PlantList({ plantList }) {
       plantImage={plant.image}
       plantPrice={plant.price}
       key={plant.id}
+      removePlant={removePlant}
     />
   ));
   return <ul className="cards">{plantsToDisplay}</ul>;
